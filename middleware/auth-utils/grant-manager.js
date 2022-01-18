@@ -98,6 +98,13 @@ GrantManager.prototype.obtainFromCode = function obtainFromCode (request, code, 
     client_id: this.clientId,
     redirect_uri: request.session ? request.session.auth_redirect_uri : {}
   };
+  console.log("A1: "+sessionId);
+  console.log("A2: "+sessionHost);
+  console.log("A3: "+code);
+  console.log("A4: "+this.clientId);
+  console.log("A5: "+request.session);
+  console.log("A6: "+request.session.auth_redirect_uri);
+  console.log("A7: "+(request.session ? request.session.auth_redirect_uri : {}));
   const handler = createHandler(this);
   const options = postOptions(this);
 
