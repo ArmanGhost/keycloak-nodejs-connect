@@ -22,6 +22,7 @@ function forceCheckSSO (keycloak, request, response) {
   const host = request.hostname;
   const headerHost = request.headers.host.split(':');
   const port = headerHost[1] || '';
+  console.log("PPPP1: "+protocol);
   const protocol = request.protocol;
   let hasQuery = ~(request.originalUrl || request.url).indexOf('?');
 
