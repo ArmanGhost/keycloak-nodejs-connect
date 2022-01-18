@@ -21,7 +21,12 @@ function forceLogin (keycloak, request, response) {
   let host = request.hostname;
   let headerHost = request.headers.host.split(':');
   let port = headerHost[1] || '';
-  let protocol = request.protocol;
+  let protocol;
+  if (host.includes("facetec-admin-core.fortebank.com")) {
+    protocol = 'https';
+  } else {
+    protocol = request.protocol;
+  }
   console.log("PPPP1: "+protocol);
   let hasQuery = ~(request.originalUrl || request.url).indexOf('?');
 
